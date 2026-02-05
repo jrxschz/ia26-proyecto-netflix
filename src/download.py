@@ -20,7 +20,7 @@ def peliculas_populares():
     with open(ruta_archivo,"w", encoding="utf-8") as archivo:
         for peliculas in lista_peliculas: # El programa ya sabe por sí solo cuándo la información de una película termina y comienza la de otra, es por eso que mi bucle for con el "}" fallava anteriormente
             texto = json.dumps(peliculas, ensure_ascii=False) # lista_peliculas es una y archivo.write() no acepta listas, sino texto (A/K/A strings), la variable texto convierte esa lista en un string 
-            archivo.write(texto + "\n\n") # Ecribir la información de cada película y CUANDO ESA INFORMACIÓN ACABE, dejar una línea en blanco 
+            archivo.write(texto + "\n") # Ecribir la información de cada película y CUANDO ESA INFORMACIÓN ACABE, dejar una línea en blanco 
 peliculas_populares() # Hago que el programa ejecute la función peliculas_populares para poder ejecutar el programa
 
 # Notas: inicialmente apenas usaba la librería json, únicamente la veces que las ha usado el profesor (request.get, response.json, informacion.get) puesto que esa librería no la hemos usado jamas.
